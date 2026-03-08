@@ -2,6 +2,31 @@
 
 [ext_resource type="Texture2D" uid="uid://k4a832fr6r5g" path="res://assets/Items/Fruits/Strawberry.png" id="1_i64fm"]
 [ext_resource type="Script" uid="uid://byp6f1r67ml4k" path="res://scripts/coin.gd" id="2_11l1o"]
+[ext_resource type="Texture2D" uid="uid://dnle6ps4gc8c5" path="res://assets/Items/Fruits/Collected.png" id="2_d14el"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxv2l"]
+atlas = ExtResource("2_d14el")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o728"]
+atlas = ExtResource("2_d14el")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enjic"]
+atlas = ExtResource("2_d14el")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0uka"]
+atlas = ExtResource("2_d14el")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08xd7"]
+atlas = ExtResource("2_d14el")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o84n6"]
+atlas = ExtResource("2_d14el")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d14el"]
 atlas = ExtResource("1_i64fm")
@@ -75,6 +100,29 @@ region = Rect2(512, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pxv2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o728")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enjic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0uka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08xd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o84n6")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_d14el")
 }, {
 "duration": 1.0,
@@ -139,9 +187,8 @@ script = ExtResource("2_11l1o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=818038048]
 sprite_frames = SubResource("SpriteFrames_pxv2l")
-animation = &"idle"
+animation = &"disappear"
 autoplay = "idle"
-frame_progress = 0.2134538
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=727485671]
 shape = SubResource("CircleShape2D_i64fm")
