@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c04ffrjs4ynmy" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://2dw1if4xuoh1" path="res://assets/Terrain/Terrain (16x16).png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bo3sp462xqj6a" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://e4x1k2mqhmpt" path="res://scenes/coin.tscn" id="4_lbhrr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -321,7 +322,7 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 [node name="Game" type="Node2D" unique_id=477670755]
 
-[node name="Player" parent="." unique_id=982007336 instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=982007336 groups=["Player"] instance=ExtResource("1_uwrxv")]
 position = Vector2(41, 40)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=254874823]
@@ -343,3 +344,18 @@ position = Vector2(535, -74)
 
 [node name="Platform3" parent="Platforms" unique_id=1868250250 instance=ExtResource("3_lnu2h")]
 position = Vector2(419, -30)
+
+[node name="Coin" parent="." unique_id=522734339 instance=ExtResource("4_lbhrr")]
+position = Vector2(420, -46)
+
+[node name="Coin2" parent="." unique_id=2040704184 instance=ExtResource("4_lbhrr")]
+position = Vector2(535, -90)
+
+[node name="Coin3" parent="." unique_id=533030273 instance=ExtResource("4_lbhrr")]
+position = Vector2(752, -115)
+
+[node name="Coin4" parent="." unique_id=1643610636 instance=ExtResource("4_lbhrr")]
+position = Vector2(921, -172)
+
+[node name="Coin5" parent="." unique_id=348258117 instance=ExtResource("4_lbhrr")]
+position = Vector2(1250, -108)
