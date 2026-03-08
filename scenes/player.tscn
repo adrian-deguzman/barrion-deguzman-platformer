@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c1c03mi6p2n1y" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://3m5mdmt2a4xp" path="res://assets/Pink Man/Jump (32x32).png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cesuysxw3pwl0" path="res://assets/Pink Man/Run (32x32).png" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://m3sye1d6bj2d" path="res://assets/Pink Man/Wall Jump (32x32).png" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -101,6 +102,26 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("4_qlg0r")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
+atlas = ExtResource("5_qlg0r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("5_qlg0r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
+atlas = ExtResource("5_qlg0r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("5_qlg0r")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
+atlas = ExtResource("5_qlg0r")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jej6c"]
 animations = [{
 "frames": [{
@@ -189,6 +210,26 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujl30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31cv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf23h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqfne")
+}],
+"loop": true,
+"name": &"wall_jump",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f1ej7"]
@@ -201,9 +242,8 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=206674551]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_jej6c")
-animation = &"jump"
+animation = &"wall_jump"
 autoplay = "idle"
-frame_progress = 0.17053644
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=864524932]
 position = Vector2(0, -11)
